@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #e74c3c !important;
+}
+
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #e74c3c !important;
+}
+
+.reservation-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    padding: 20px;
+    text-align: center;
+    border: none;
+}
+
+.card-header h4 {
+    margin: 0;
+    font-weight: 600;
+}
+
+.card-header i {
+    margin-right: 10px;
+}
+
+.form-label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.form-label i {
+    color: #e74c3c;
+    margin-right: 8px;
+}
+
+.form-control, .form-select {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    transition: 0.3s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: #e74c3c;
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+.tables-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.table-card {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.table-card:hover {
+    transform: translateY(-3px);
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.table-card.selected {
+    border-color: #e74c3c;
+    background: #fff5f5;
+}
+
+.table-card.unavailable {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: #e9ecef;
+}
+
+.table-card.unavailable:hover {
+    transform: none;
+}
+
+.table-icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.table-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 5px 0;
+}
+
+.table-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    text-align: left;
+}
+
+.table-info-list li {
+    font-size: 12px;
+    padding: 4px 0;
+    border-bottom: 1px dashed #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-info-list li:last-child {
+    border-bottom: none;
+}
+
+.table-info-list i {
+    width: 20px;
+    color: #e74c3c;
+    font-size: 12px;
+}
+
+.table-info-list span {
+    flex: 1;
+    color: #555;
+}
+
+.table-info-list .value {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.availability-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+.badge-available {
+    background: #d4edda;
+    color: #155724;
+}
+
+.badge-booked {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.table-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: #e74c3c;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.btn-book {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-book:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+.btn-book:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 30px;
+}
+
+@media (max-width: 768px) {
+    .tables-grid {
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        gap: 10px;
+    }
+    .table-card {
+        padding: 10px;
+    }
+    .table-number {
+        font-size: 16px;
+    }
+    .table-info-list li {
+        font-size: 10px;
+    }
+}

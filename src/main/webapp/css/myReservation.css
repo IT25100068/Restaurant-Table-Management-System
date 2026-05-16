@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1600') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.85) !important;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    color: #e74c3c !important;
+}
+
+.nav-link {
+    color: white !important;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #e74c3c !important;
+}
+
+.reservation-header {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    padding: 25px;
+    text-align: center;
+    color: white;
+    border-radius: 15px 15px 0 0;
+}
+
+.reservation-header i {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.reservation-header h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.reservation-header p {
+    opacity: 0.9;
+    font-size: 14px;
+}
+
+.stats-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stats-card i {
+    font-size: 24px;
+    color: #e74c3c;
+}
+
+.stats-card .count {
+    font-size: 24px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.stats-card .label {
+    color: #6c757d;
+    font-size: 14px;
+}
+
+.btn-new {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 25px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.btn-new:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+    color: white;
+}
+
+.reservation-item {
+    background: white;
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.reservation-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.reservation-status {
+    padding: 8px 15px;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    display: inline-block;
+    border-radius: 20px;
+}
+
+.status-confirmed { background: #27ae60; }
+.status-pending { background: #f1c40f; color: #333; }
+.status-cancelled { background: #e74c3c; }
+.status-completed { background: #3498db; }
+
+.reservation-details {
+    padding: 20px;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.info-icon {
+    width: 35px;
+    height: 35px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #e74c3c;
+}
+
+.info-label {
+    font-size: 12px;
+    color: #6c757d;
+}
+
+.info-value {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.special-request {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 13px;
+    color: #555;
+}
+
+.btn-cancel {
+    background: #e74c3c;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 600;
+    width: 100%;
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: white;
+    border-radius: 15px;
+}
+
+.empty-state i {
+    font-size: 60px;
+    color: #e74c3c;
+    margin-bottom: 20px;
+}
+
+.empty-state h4 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+}
