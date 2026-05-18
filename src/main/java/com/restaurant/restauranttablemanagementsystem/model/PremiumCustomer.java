@@ -32,4 +32,5 @@ public class PremiumCustomer extends Customer {
         this.loyaltyPoints += points;
         return points;
     }
+    
 }
