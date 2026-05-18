@@ -14,8 +14,12 @@ public class PremiumCustomer extends Customer {
         this.discountRate = 15.0;
     }
 
-    public double getDiscountRate() { return discountRate; }
-    public void setDiscountRate(double discountRate) { this.discountRate = discountRate; }
+    public double getDiscountRate() { 
+        return discountRate; 
+    }
+    public void setDiscountRate(double discountRate) { 
+        this.discountRate = discountRate; 
+    }
 
     @Override
     public double calculateDiscount(double amount) {
